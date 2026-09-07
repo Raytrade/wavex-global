@@ -1,0 +1,524 @@
+<div class="live-banner">
+  <strong>WAVEX GLOBAL — LIVE ENVIRONMENT</strong>
+  <span>real shipments, payments, or carrier connections. Live.</span>
+</div>
+
+<header class="navbar">
+  <div class="brand" onclick="showView('homeView')">
+    <div class="brand-mark">W</div>
+    <div>
+      <div class="brand-name">WAVEX GLOBAL</div>
+      <div class="brand-tag">MOVE BEYOND BORDERS</div>
+    </div>
+  </div>
+
+  <nav>
+    <button onclick="showView('homeView')">Home</button>
+    <button onclick="showView('trackView')">Track</button>
+    <button onclick="showView('dashboardView')">Dashboard</button>
+  </nav>
+
+  <div class="nav-actions" id="navActions">
+    <button class="btn btn-outline" onclick="showView('authView'); switchAuth('login')">
+      Sign In
+    </button>
+    <button class="btn btn-primary" onclick="showView('authView'); switchAuth('signup')">
+      Create Account
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="homeView" class="view active">
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">GLOBAL LOGISTICS TECHNOLOGY</span>
+
+        <h1>
+          Move beyond
+          <span>borders.</span>
+        </h1>
+
+        <p>
+          Create, monitor and trace shipments through the WAVEX GLOBAL
+          Live logistics platform.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-large"
+                  onclick="showView('trackView')">
+            Track a Package
+          </button>
+
+          <button class="btn btn-light btn-large"
+                  onclick="showView('authView'); switchAuth('signup')">
+            Create Shipment
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="card-top">
+          <span>LIVE Active TRACKING</span>
+          <span class="status-dot"></span>
+        </div>
+
+        <div class="tracking-code">WXG-2048-7719</div>
+
+        <div class="route">
+          <div>
+            <small>FROM</small>
+            <strong>Pensacola, United States</strong>
+          </div>
+
+          <div class="route-line">
+            <span>✈</span>
+          </div>
+
+          <div>
+            <small>TO</small>
+            <strong>London, UK</strong>
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="hero-status">
+          <strong>In International Transit</strong>
+          <span>Estimated delivery: Sep 10, 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div>
+        <strong>190+</strong>
+        <span>Countries</span>
+      </div>
+      <div>
+        <strong>24/7</strong>
+        <span>Visibility</span>
+      </div>
+      <div>
+        <strong>99.2%</strong>
+        <span>Live Tracking</span>
+      </div>
+      <div>
+        <strong>1M+</strong>
+        <span>Real Shipments</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="eyebrow">HOW IT WORKS</span>
+        <h2>Live the complete shipment journey.</h2>
+        <p>
+          Create a package, generate a tracking number and simulate
+          every delivery stage.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">01</div>
+          <h3>Create Account</h3>
+          <p>
+            Create a client account and access your private shipment dashboard.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">02</div>
+          <h3>Create Package</h3>
+          <p>
+            Enter sender, receiver and package information to create a shipment.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">03</div>
+          <h3>Track Shipment</h3>
+          <p>
+            Use the automatically generated tracking number to monitor your package.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">04</div>
+          <h3>Simulate Delivery</h3>
+          <p>
+            Advance the shipment through pickup, transit, customs and delivery.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta">
+      <div>
+        <span class="eyebrow">LIVE THE PLATFORM</span>
+        <h2>Ready to create your first shipment?</h2>
+        <p>Start with a free Real client account.</p>
+      </div>
+
+      <button class="btn btn-primary btn-large"
+              onclick="showView('authView'); switchAuth('signup')">
+        Create Client Account
+      </button>
+    </section>
+
+  </section>
+
+
+  <!-- TRACK -->
+  <section id="trackView" class="view">
+
+    <div class="page-header">
+      <span class="eyebrow">SHIPMENT TRACKING</span>
+      <h1>Track your package</h1>
+      <p>Enter a WAVEX GLOBAL Live tracking number.</p>
+    </div>
+
+    <div class="tracker-box">
+      <input
+        id="trackingInput"
+        type="text"
+        placeholder="Example: WXG-2048-7719"
+        autocomplete="off"
+      />
+
+      <button class="btn btn-primary" onclick="trackShipment()">
+        Track Shipment
+      </button>
+    </div>
+
+    <div id="trackingResult"></div>
+
+  </section>
+
+
+  <!-- AUTH -->
+  <section id="authView" class="view">
+
+    <div class="auth-wrapper">
+
+      <div class="auth-info">
+        <span class="eyebrow">WAVEX CLIENT PORTAL</span>
+        <h1>Manage your shipments from one place.</h1>
+        <p>
+          Create shipments, receive tracking numbers and monitor
+          delivery progress.
+        </p>
+
+        <div class="demo-login">
+          <strong>Demo account</strong>
+          <span>Email: real@wavex.Live</span>
+          <span>Password: Real1234</span>
+
+          <button onclick="fillLiveLogin()">
+            Use Live Account
+          </button>
+        </div>
+      </div>
+
+      <div class="auth-card">
+
+        <div class="auth-tabs">
+          <button id="loginTab"
+                  class="active"
+                  onclick="switchAuth('login')">
+            Sign In
+          </button>
+
+          <button id="signupTab"
+                  onclick="switchAuth('signup')">
+            Create Account
+          </button>
+        </div>
+
+        <!-- LOGIN -->
+        <form id="loginForm" onsubmit="login(event)">
+
+          <label>Email</label>
+          <input id="loginEmail"
+                 type="email"
+                 placeholder="you@example.com"
+                 required>
+
+          <label>Password</label>
+          <input id="loginPassword"
+                 type="password"
+                 placeholder="Your password"
+                 required>
+
+          <button class="btn btn-primary full" type="submit">
+            Sign In
+          </button>
+
+        </form>
+
+        <!-- SIGNUP -->
+        <form id="signupForm"
+              class="hidden"
+              onsubmit="signup(event)">
+
+          <label>Full Name</label>
+          <input id="signupName"
+                 type="text"
+                 placeholder="Your full name"
+                 required>
+
+          <label>Email</label>
+          <input id="signupEmail"
+                 type="email"
+                 placeholder="you@example.com"
+                 required>
+
+          <label>Password</label>
+          <input id="signupPassword"
+                 type="password"
+                 minlength="6"
+                 placeholder="Minimum 6 characters"
+                 required>
+
+          <button class="btn btn-primary full" type="submit">
+            Create Account
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- DASHBOARD -->
+  <section id="dashboardView" class="view">
+
+    <div id="loggedOutDashboard" class="login-required">
+      <div class="empty-icon">🔐</div>
+      <h2>Client login required</h2>
+      <p>Sign in or create an account to access your shipment dashboard.</p>
+
+      <button class="btn btn-primary"
+              onclick="showView('authView'); switchAuth('login')">
+        Sign In
+      </button>
+    </div>
+
+    <div id="dashboardContent" class="hidden">
+
+      <div class="dashboard-header">
+
+        <div>
+          <span class="eyebrow">CLIENT DASHBOARD</span>
+          <h1>Welcome, <span id="clientName"></span></h1>
+          <p>Manage and monitor your Live shipments.</p>
+        </div>
+
+        <button class="btn btn-primary"
+                onclick="showCreateShipment()">
+          + Create Shipment
+        </button>
+
+      </div>
+
+
+      <div class="dashboard-stats">
+
+        <div class="dash-stat">
+          <span>Total Shipments</span>
+          <strong id="totalShipments">0</strong>
+        </div>
+
+        <div class="dash-stat">
+          <span>In Transit</span>
+          <strong id="transitShipments">0</strong>
+        </div>
+
+        <div class="dash-stat">
+          <span>Delivered</span>
+          <strong id="deliveredShipments">0</strong>
+        </div>
+
+      </div>
+
+
+      <!-- CREATE SHIPMENT -->
+      <div id="createShipmentCard" class="dashboard-card hidden">
+
+        <div class="card-heading">
+          <div>
+            <span class="eyebrow">NEW SHIPMENT</span>
+            <h2>Create a Live package</h2>
+          </div>
+
+          <button class="close-btn"
+                  onclick="hideCreateShipment()">×</button>
+        </div>
+
+        <form onsubmit="createShipment(event)">
+
+          <div class="form-section">
+            <h3>Sender Information</h3>
+
+            <div class="form-grid">
+
+              <div>
+                <label>Sender Name</label>
+                <input id="senderName" required>
+              </div>
+
+              <div>
+                <label>Sender Contact</label>
+                <input id="senderContact" required>
+              </div>
+
+              <div class="full-field">
+                <label>Sender Location</label>
+                <input id="senderLocation"
+                       placeholder="Lagos, Nigeria"
+                       required>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="form-section">
+            <h3>Receiver Information</h3>
+
+            <div class="form-grid">
+
+              <div>
+                <label>Receiver Name</label>
+                <input id="receiverName" required>
+              </div>
+
+              <div>
+                <label>Receiver Contact</label>
+                <input id="receiverContact" required>
+              </div>
+
+              <div class="full-field">
+                <label>Receiver Location</label>
+                <input id="receiverLocation"
+                       placeholder="London, UK"
+                       required>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="form-section">
+            <h3>Package Information</h3>
+
+            <div class="form-grid">
+
+              <div>
+                <label>Package Description</label>
+                <input id="packageDescription"
+                       placeholder="Documents, clothing, electronics..."
+                       required>
+              </div>
+
+              <div>
+                <label>Weight (kg)</label>
+                <input id="packageWeight"
+                       type="number"
+                       min="0.1"
+                       step="0.1"
+                       required>
+              </div>
+
+              <div>
+                <label>Service</label>
+
+                <select id="packageService">
+                  <option>Global Express</option>
+                  <option>International Standard</option>
+                  <option>Economy International</option>
+                </select>
+              </div>
+
+              <div>
+                <label>Estimated Delivery</label>
+                <input id="estimatedDelivery"
+                       type="date"
+                       required>
+              </div>
+
+            </div>
+          </div>
+
+
+          <button class="btn btn-primary btn-large"
+                  type="submit">
+            Create Shipment & Generate Tracking Number
+          </button>
+
+        </form>
+
+      </div>
+
+
+      <!-- SHIPMENTS -->
+      <div class="dashboard-card">
+
+        <div class="card-heading">
+          <div>
+            <span class="eyebrow">YOUR SHIPMENTS</span>
+            <h2>Shipment history</h2>
+          </div>
+        </div>
+
+        <div id="shipmentList"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="footer-brand">
+    <div class="brand-mark">W</div>
+    <strong>WAVEX GLOBAL</strong>
+  </div>
+
+  <p>MOVE BEYOND BORDERS</p>
+
+  <span>© 2026 WAVEX GLOBAL — TEST ENVIRONMENT</span>
+</footer>
+
+
+<!-- SHIPMENT MODAL -->
+<div id="shipmentModal" class="modal hidden">
+
+  <div class="modal-overlay" onclick="closeModal()"></div>
+
+  <div class="modal-card">
+
+    <button class="modal-close" onclick="closeModal()">×</button>
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- TOAST -->
+<div id="toast"></div> act as a professional
